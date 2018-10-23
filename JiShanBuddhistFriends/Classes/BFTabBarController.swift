@@ -46,20 +46,7 @@ class BFTabBarViewController: UITabBarController {
         ClassNav.tabBarItem.title = "藏经阁"
         ClassNav.tabBarItem.image = UIImage(named:"second")
         ClassNav.tabBarItem.selectedImage = UIImage(named:"second")
-        
-//        let  CartVC  = CartViewController()
-//        CartVC.title = "发现"
-//        let CartNav = UINavigationController(rootViewController:CartVC)
-//        CartNav.tabBarItem.title = "发现"
-//        CartNav.tabBarItem.image = UIImage(named:"cart")
-//        CartNav.tabBarItem.selectedImage = UIImage(named:"cart_blue")
-//        let  MyVC  = MyViewController()
-//        MyVC.title = "我的"
-//        let MyNav = UINavigationController(rootViewController:MyVC)
-//        MyNav.tabBarItem.title = "我的"
-//        MyNav.tabBarItem.image = UIImage(named:"me")
-//        MyNav.tabBarItem.selectedImage = UIImage(named:"me_blue")
-        
+
         // 添加工具栏
         items = [MainNav,ClassNav]
         self.viewControllers = items as? [UIViewController]

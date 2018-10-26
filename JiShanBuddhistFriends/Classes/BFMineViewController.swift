@@ -23,30 +23,29 @@ class BFMineViewController : UIViewController,UITableViewDataSource,UITableViewD
     }
     
     var mArrItem : NSArray?
-    var switchBtn : UISwitch?
     
     override func viewDidLoad() {
         // 创建UISwitch开关
         //定义控件x:30 y:100 width:80 height:40
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.init(red: 239/255.0, green: 238/255.0, blue: 242/255.0, alpha: 1)
         
-        let labelDizang = UILabel(frame: CGRect(x: 0, y: Define_NavigationBarHeight + 50, width: Define_ScreenWidth-80, height: 40))
+        
+        let itemView = UIView(frame: CGRect(x: 0, y: Define_NavigationBarHeight + 50, width: Define_ScreenWidth, height: 40))
+        itemView.backgroundColor = UIColor.white
+        let labelDizang = UILabel(frame: CGRect(x: 20, y: (itemView.frame.height - 24)/2, width: 200, height: 24))
         labelDizang.text = EMineItem.switchBtn.DizangFastRemind.value()
-        labelDizang.textAlignment = .left
         labelDizang.font = UIFont.systemFont(ofSize: 18)
-        self.view.addSubview(labelDizang)
+        itemView.addSubview(labelDizang)
         
-        switchBtn = UISwitch(frame: CGRect(x: labelDizang.frame.width, y: 100, width: 80, height: 40))
-        self.view.addSubview(switchBtn!)
-        //设置开启状态显示的颜色
-//        switchBtn!.onTintColor = UIColor.green
-        //设置关闭状态的颜色
-//        switchBtn!.tintColor = UIColor.gray
-        //滑块上小圆点的颜色
-//        switchBtn!.thumbTintColor = UIColor.white
+        let switchBtn = UISwitch()
+        switchBtn.frame.origin = CGPoint(x: itemView.frame.width - switchBtn.frame.width*1.5, y: (itemView.frame.height - switchBtn.frame.height)/2)
+        switchBtn.isOn = UserDefaults.standard.bool(forKey: Define_UserDefaultsKey_DizangFastRemind)
+        itemView.addSubview(switchBtn)
         
         // 添加监听
-        switchBtn!.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
+        switchBtn.addTarget(self, action: #selector(switchDidChange), for: .valueChanged)
+        
+        self.view.addSubview(itemView)
     }
     
     func makeItem(){
@@ -68,12 +67,15 @@ class BFMineViewController : UIViewController,UITableViewDataSource,UITableViewD
 //        print(switchBtn.isOn)
 //    }
 //    @objc
-    @objc func switchDidChange(){
+    @objc func switchDidChange(_ sender: UISwitch){
         //打印当前值
-        if (switchBtn?.isOn)!{
+        if (sender.isOn){
             BFFastRemind.Instance.openDizangFastRemind()
         }else{
             BFFastRemind.Instance.closeDizangFastRemind()
         }
+        
+        //把当前状态保存起来
+        UserDefaults.standard.set(sender.isOn, forKey: Define_UserDefaultsKey_DizangFastRemind)
     }
 }

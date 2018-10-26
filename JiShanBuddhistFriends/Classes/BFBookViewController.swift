@@ -59,9 +59,7 @@ class BFBookViewController: UIViewController,UITableViewDataSource,UITableViewDe
         super.viewDidLoad()
         let jsonPath = Bundle.main.path(forResource: "Book", ofType: "plist")
         cells = NSArray(contentsOfFile:jsonPath ?? "Book.plist")
-        
-        print(cells?.count ?? "0")
-            
+                    
         // Do any additional setup after loading the view, typically from a nib.
         
         let  tableView = UITableView(frame:CGRect(x:0, y:40, width:self.view.frame.size.width, height:Define_ScreenHeight), style:UITableView.Style.plain)

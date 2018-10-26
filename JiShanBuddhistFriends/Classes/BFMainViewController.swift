@@ -13,6 +13,9 @@ class BFMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        //设置应用程序右上角的提醒个数
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.ShowView()
     }
@@ -40,6 +43,15 @@ class BFMainViewController: UIViewController {
         }
         self.view.addSubview(dateGregorianLabel)
         self.view.addSubview(fastRemindLabel)
+        
+        //判断本地吃斋提醒是不是不够了，不足5条的话自动重新获取推送
+        let isOpenDzFast = UserDefaults.standard.bool(forKey: Define_UserDefaultsKey_DizangFastRemind)
+        if isOpenDzFast {
+            let dzFastNotis = BFNotification.Instance.notificationForKindKeyItems(notificationKindKey: NotificationKindKey.DizangFastKey)
+            if dzFastNotis == nil || dzFastNotis!.count < 5 {
+                BFNotification.Instance.scheduleDizangFastNotification()
+            }
+        }
     }
 }
 

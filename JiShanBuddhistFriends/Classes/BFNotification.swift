@@ -48,7 +48,7 @@ class BFNotification {
                 //时区
                 localNotification.timeZone = NSTimeZone.default
                 //推送内容
-                localNotification.alertBody = "今天是农历" + strDate + " 地藏斋"
+                localNotification.alertBody = "今天是农历" + strDate + " 地藏斋吃斋日"
                 //声音
                 localNotification.soundName = UILocalNotificationDefaultSoundName
                 //额外信息
@@ -95,11 +95,13 @@ class BFNotification {
     
     //清除某一类通知
     func cancelNotificationForKindKey(notificationKindKey:NotificationKindKey){
-        //通过itemID获取已有的消息推送，然后删除掉，以便重新判断
-        let existingNotification = self.notificationForKindKeyItem(notificationKindKey: notificationKindKey.rawValue)
-        if existingNotification != nil {
-            //如果existingNotification不为nil，就取消消息推送
-            UIApplication.shared.cancelLocalNotification(existingNotification!)
+        let allNotifications = UIApplication.shared.scheduledLocalNotifications
+        for notification in allNotifications! {
+            let info = notification.userInfo as! [String:String]
+            let id = info["NotificationID"]
+            if id != nil && (id!.contains(notificationKindKey.rawValue)) {
+                UIApplication.shared.cancelLocalNotification(notification)
+            }
         }
     }
     
@@ -117,15 +119,22 @@ class BFNotification {
     }
     
     //通过遍历所有消息推送，找到含有相应kindKey标记的
-    func notificationForKindKeyItem(notificationKindKey:String)-> UILocalNotification? {
+    func notificationForKindKeyItems(notificationKindKey:NotificationKindKey)-> [UILocalNotification]? {
         let allNotifications = UIApplication.shared.scheduledLocalNotifications
+        var findNotis : [UILocalNotification]?
         for notification in allNotifications! {
             let info = notification.userInfo as! [String:String]
             let id = info["NotificationID"]
-            if id != nil && (id!.contains(notificationKindKey)) {
-                return notification as UILocalNotification
+            if id != nil && (id!.contains(notificationKindKey.rawValue)) {
+                if findNotis == nil{
+                    findNotis = [UILocalNotification]()
+                }
+                
+                findNotis!.append(notification)
             }
         }
-        return nil
+        
+        
+        return findNotis
     }
 }

@@ -29,3 +29,6 @@ let Define_DistanceTop:CGFloat = ((Define_iOS7OrLater) ? UIApplication.shared.st
 let Define_NaviAddStatusHeight = Define_NavigationBarHeight + Define_DistanceTop
 // 视图高度
 let Define_ViewHeight = (Define_ScreenHeight - Define_DistanceTop - Define_NavigationBarHeight)
+
+
+let Define_UserDefaultsKey_DizangFastRemind = "DizangFastRemind"

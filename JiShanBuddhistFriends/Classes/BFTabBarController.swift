@@ -45,9 +45,16 @@ class BFTabBarViewController: UITabBarController {
         BookVC.tabBarItem.title = "藏经阁"
         BookVC.tabBarItem.image = UIImage(named:"second")
         BookVC.tabBarItem.selectedImage = UIImage(named:"second")
+        
+        let mineVC  = BFMineViewController()
+        mineVC.title = "我"
+        let mineNav = UINavigationController(rootViewController:mineVC)
+        mineNav.tabBarItem.title = "我"
+        mineNav.tabBarItem.image = UIImage(named:"my")
+        mineNav.tabBarItem.selectedImage = UIImage(named:"my")
 
         // 添加工具栏
-        items = [MainNav, BookNav]
+        items = [MainNav, BookNav, mineNav]
         self.viewControllers = items as? [UIViewController]
         for  i in 0 ..< items.count {
             /*

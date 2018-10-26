@@ -26,6 +26,7 @@
 		87EBEA5C2181B88C009A7417 /* BFCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA5B2181B88C009A7417 /* BFCalendar.swift */; };
 		87EBEA5E2182AD3F009A7417 /* BFChineseCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA5D2182AD3F009A7417 /* BFChineseCalendar.swift */; };
 		87EBEA602182FCF6009A7417 /* BFNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA5F2182FCF6009A7417 /* BFNotification.swift */; };
+		87EBEA622183168A009A7417 /* BFMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA612183168A009A7417 /* BFMineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		87EBEA5B2181B88C009A7417 /* BFCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFCalendar.swift; sourceTree = "<group>"; };
 		87EBEA5D2182AD3F009A7417 /* BFChineseCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFChineseCalendar.swift; sourceTree = "<group>"; };
 		87EBEA5F2182FCF6009A7417 /* BFNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFNotification.swift; sourceTree = "<group>"; };
+		87EBEA612183168A009A7417 /* BFMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFMineViewController.swift; sourceTree = "<group>"; };
+		87EBEA63218327AC009A7417 /* JiShanBuddhistFriends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JiShanBuddhistFriends.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 		87A162A4217ECFA500D75ED0 /* JiShanBuddhistFriends */ = {
 			isa = PBXGroup;
 			children = (
+				87EBEA63218327AC009A7417 /* JiShanBuddhistFriends.entitlements */,
 				87EBEA50218075A4009A7417 /* Resources */,
 				87A162D8217EE99F00D75ED0 /* Classes */,
 				87A162AE217ECFA600D75ED0 /* Assets.xcassets */,
@@ -98,6 +102,7 @@
 				87EBEA432180133F009A7417 /* BFBookInfoViewController.swift */,
 				87A162A9217ECFA500D75ED0 /* BFMainViewController.swift */,
 				87A162D5217EE2CD00D75ED0 /* BFTabBarController.swift */,
+				87EBEA612183168A009A7417 /* BFMineViewController.swift */,
 				87A162D9217EE9F300D75ED0 /* BFDefine.swift */,
 				87EBEA592181B7FD009A7417 /* BFFastRemind.swift */,
 				87EBEA5B2181B88C009A7417 /* BFCalendar.swift */,
@@ -154,6 +159,11 @@
 				TargetAttributes = {
 					87A162A1217ECFA500D75ED0 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -199,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87EBEA622183168A009A7417 /* BFMineViewController.swift in Sources */,
 				87EBEA602182FCF6009A7417 /* BFNotification.swift in Sources */,
 				87EBEA5E2182AD3F009A7417 /* BFChineseCalendar.swift in Sources */,
 				87A162DA217EE9F300D75ED0 /* BFDefine.swift in Sources */,
@@ -336,6 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = JiShanBuddhistFriends/JiShanBuddhistFriends.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MAKZS6CJ3;
 				INFOPLIST_FILE = JiShanBuddhistFriends/Info.plist;
@@ -356,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = JiShanBuddhistFriends/JiShanBuddhistFriends.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MAKZS6CJ3;
 				INFOPLIST_FILE = JiShanBuddhistFriends/Info.plist;

@@ -10,20 +10,20 @@ import Foundation
 
 class BFFastRemind {
     
-    static let sharedInstance = BFFastRemind()
+    static let Instance = BFFastRemind()
     
     //地藏斋日期
     static private let mStrArrDizang: [String] = ["初一", "初八", "十四", "十五", "十八", "廿三", "廿四", "廿七", "廿八", "廿九", "三十"]
     
     //开启地藏斋提醒
     func openDizangFastRemind(){
-        //生成未来90天的地藏斋推送提醒
-        BFNotification.sharedInstance.scheduleDizangFastNotification()
+        //生成未来30天的地藏斋推送提醒
+        BFNotification.Instance.scheduleDizangFastNotification()
     }
     
     //关闭地藏斋提醒
     func closeDizangFastRemind(){
-        BFNotification.sharedInstance.clearDizangFastNotification()
+        BFNotification.Instance.clearDizangFastNotification()
     }
     
     //检查所传递日期是否是地藏斋日，默认值为今天

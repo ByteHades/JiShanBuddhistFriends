@@ -46,7 +46,6 @@ class BFChineseCalendar {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "zh_CN")
         formatter.dateStyle = .full
-//        formatter.dateFormat = "MMM dd EEEE"
         if !dateFormat.isEmpty{
             formatter.dateFormat = dateFormat
         }

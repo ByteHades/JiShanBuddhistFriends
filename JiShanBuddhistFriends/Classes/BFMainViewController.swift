@@ -25,11 +25,12 @@ class BFMainViewController: UIViewController {
 //        self.view.addSubview(imgView)
         
         //显示农历日期 和 吃斋提醒
-        let dateGregorianLabel = UILabel(frame: CGRect(x: 0, y: Define_NaviAddStatusHeight, width: Define_ScreenWidth, height: 20));
+        let dateGregorianLabel = UILabel(frame: CGRect(x: 0, y: Define_NaviAddStatusHeight, width: Define_ScreenWidth, height: 18));
         dateGregorianLabel.font = UIFont.systemFont(ofSize: 18)
         
-        let fastRemindLabel = UILabel(frame: CGRect(x: 0, y: Define_NaviAddStatusHeight+dateGregorianLabel.frame.height, width: Define_ScreenWidth, height: 50));
-        
+        let fastRemindLabel = UILabel(frame: CGRect(x: 0, y: Define_NaviAddStatusHeight+dateGregorianLabel.frame.height, width: Define_ScreenWidth, height: 24));
+        fastRemindLabel.font = UIFont.systemFont(ofSize: 24)
+
         //获取公历日期
         dateGregorianLabel.text = BFCalendar.getDate() + " 农历" + BFChineseCalendar.getDate(dateFormat: " MMM dd")
         

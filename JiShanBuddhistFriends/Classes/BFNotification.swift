@@ -15,24 +15,36 @@ enum NotificationKindKey : String{
 
 class BFNotification {
     
-    static let sharedInstance = BFNotification()
+    static let Instance = BFNotification()
     
     //发送地藏斋通知消息
     func scheduleDizangFastNotification(){
-        //根据当前日期向后检查90天的地藏斋日加入推送通知
-        for i in 1...90 {
-            let date = Date()
-            let calendar = Calendar.current
+        let date = Date()
+        let calendar = Calendar.current
+        
+        //清理当前的通知
+        BFNotification.Instance.clearDizangFastNotification()
+        
+//        var arrNoti : [UILocalNotification] = []
+        
+        //根据当前日期向后检查30天的地藏斋日加入推送通知
+        for i in 1...30 {
             let laterDate = calendar.date(byAdding: .day, value: i, to: date)
-            if BFFastRemind.checkDizangDay(date: laterDate!){
-                print()
-                
+            if BFFastRemind.checkDizangDay(date: laterDate!){                
                 let strDate = BFChineseCalendar.getDay(date: laterDate!, dateFormat: "MMMdd")
                 
                 //创建UILocalNotification来进行本地消息通知
                 let localNotification = UILocalNotification()
-                //推送时间（设置为30秒以后）
-                localNotification.fireDate = laterDate
+                
+                //将提醒时间设置为早上8点半
+                var comDate = calendar.dateComponents([.year, .month, .day], from: laterDate!)
+                comDate.hour = 8
+                comDate.minute = 30
+                comDate.second = 0
+                comDate.timeZone = TimeZone.init(secondsFromGMT: 60 * 60 * 8)
+                
+                //推送时间
+                localNotification.fireDate = calendar.date(from: comDate)
                 //时区
                 localNotification.timeZone = NSTimeZone.default
                 //推送内容
@@ -40,14 +52,23 @@ class BFNotification {
                 //声音
                 localNotification.soundName = UILocalNotificationDefaultSoundName
                 //额外信息
+                //待机界面的滑动动作提示
+                localNotification.alertAction = "打开应用"
+                // 应用程序图标右上角显示的消息数
+                localNotification.applicationIconBadgeNumber = 1
                 
                 let nID : String = NotificationKindKey.DizangFastKey.rawValue + strDate
                 
                 localNotification.userInfo = ["NotificationID": nID]
                 
+                // fix 这里有性能问题 不应该一个一个的发送通知 应该变成数组一起发送通知
                 scheduleNotification( notificationID: nID, notification: localNotification )
+                
+//                arrNoti.append(localNotification)
             }
         }
+        
+//        UIApplication.shared.scheduledLocalNotifications = arrNoti
     }
     
     //清理所有地藏斋提醒通知

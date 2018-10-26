@@ -7,25 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		877CCF79217F19AA00A889AA /* Book.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877CCF77217F0DE500A889AA /* Book.plist */; };
 		87A162A6217ECFA500D75ED0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162A5217ECFA500D75ED0 /* AppDelegate.swift */; };
-		87A162A8217ECFA500D75ED0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162A7217ECFA500D75ED0 /* FirstViewController.swift */; };
-		87A162AA217ECFA500D75ED0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162A9217ECFA500D75ED0 /* SecondViewController.swift */; };
+		87A162A8217ECFA500D75ED0 /* BFBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162A7217ECFA500D75ED0 /* BFBookViewController.swift */; };
+		87A162AA217ECFA500D75ED0 /* BFMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162A9217ECFA500D75ED0 /* BFMainViewController.swift */; };
 		87A162AF217ECFA600D75ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A162AE217ECFA600D75ED0 /* Assets.xcassets */; };
-		87A162B2217ECFA600D75ED0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87A162B0217ECFA600D75ED0 /* LaunchScreen.storyboard */; };
 		87A162D6217EE2CD00D75ED0 /* BFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162D5217EE2CD00D75ED0 /* BFTabBarController.swift */; };
 		87A162DA217EE9F300D75ED0 /* BFDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162D9217EE9F300D75ED0 /* BFDefine.swift */; };
+		87EBEA4021800E37009A7417 /* 般若波罗蜜多心经.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA3F21800E37009A7417 /* 般若波罗蜜多心经.rtf */; };
+		87EBEA4221800F78009A7417 /* 大悲咒.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA4121800F78009A7417 /* 大悲咒.rtf */; };
+		87EBEA442180133F009A7417 /* BFBookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA432180133F009A7417 /* BFBookInfoViewController.swift */; };
+		87EBEA4D21804732009A7417 /* MainImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA4C21804732009A7417 /* MainImage.jpeg */; };
+		87EBEA4F21807066009A7417 /* 往生咒.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA4E21807066009A7417 /* 往生咒.rtf */; };
+		87EBEA52218076E4009A7417 /* 七佛灭罪真言.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA51218076E4009A7417 /* 七佛灭罪真言.rtf */; };
+		87EBEA5621807B18009A7417 /* 妙法莲华经观世音菩萨普门品.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA5521807B18009A7417 /* 妙法莲华经观世音菩萨普门品.rtf */; };
+		87EBEA5821807CF6009A7417 /* 金刚般若波罗蜜经.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA5721807CF6009A7417 /* 金刚般若波罗蜜经.rtf */; };
+		87EBEA5A2181B7FD009A7417 /* BFFastRemind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA592181B7FD009A7417 /* BFFastRemind.swift */; };
+		87EBEA5C2181B88C009A7417 /* BFCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA5B2181B88C009A7417 /* BFCalendar.swift */; };
+		87EBEA5E2182AD3F009A7417 /* BFChineseCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA5D2182AD3F009A7417 /* BFChineseCalendar.swift */; };
+		87EBEA602182FCF6009A7417 /* BFNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA5F2182FCF6009A7417 /* BFNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		877CCF77217F0DE500A889AA /* Book.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Book.plist; sourceTree = "<group>"; };
 		87A162A2217ECFA500D75ED0 /* JiShanBuddhistFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JiShanBuddhistFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A162A5217ECFA500D75ED0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87A162A7217ECFA500D75ED0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		87A162A9217ECFA500D75ED0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		87A162A7217ECFA500D75ED0 /* BFBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFBookViewController.swift; sourceTree = "<group>"; };
+		87A162A9217ECFA500D75ED0 /* BFMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFMainViewController.swift; sourceTree = "<group>"; };
 		87A162AE217ECFA600D75ED0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		87A162B1217ECFA600D75ED0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87A162B3217ECFA600D75ED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87A162D5217EE2CD00D75ED0 /* BFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFTabBarController.swift; sourceTree = "<group>"; };
 		87A162D9217EE9F300D75ED0 /* BFDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFDefine.swift; sourceTree = "<group>"; };
+		87EBEA3F21800E37009A7417 /* 般若波罗蜜多心经.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "般若波罗蜜多心经.rtf"; sourceTree = "<group>"; };
+		87EBEA4121800F78009A7417 /* 大悲咒.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "大悲咒.rtf"; sourceTree = "<group>"; };
+		87EBEA432180133F009A7417 /* BFBookInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFBookInfoViewController.swift; sourceTree = "<group>"; };
+		87EBEA4C21804732009A7417 /* MainImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MainImage.jpeg; sourceTree = "<group>"; };
+		87EBEA4E21807066009A7417 /* 往生咒.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "往生咒.rtf"; sourceTree = "<group>"; };
+		87EBEA51218076E4009A7417 /* 七佛灭罪真言.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "七佛灭罪真言.rtf"; sourceTree = "<group>"; };
+		87EBEA5521807B18009A7417 /* 妙法莲华经观世音菩萨普门品.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "妙法莲华经观世音菩萨普门品.rtf"; sourceTree = "<group>"; };
+		87EBEA5721807CF6009A7417 /* 金刚般若波罗蜜经.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "金刚般若波罗蜜经.rtf"; sourceTree = "<group>"; };
+		87EBEA592181B7FD009A7417 /* BFFastRemind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFFastRemind.swift; sourceTree = "<group>"; };
+		87EBEA5B2181B88C009A7417 /* BFCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFCalendar.swift; sourceTree = "<group>"; };
+		87EBEA5D2182AD3F009A7417 /* BFChineseCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFChineseCalendar.swift; sourceTree = "<group>"; };
+		87EBEA5F2182FCF6009A7417 /* BFNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +82,9 @@
 		87A162A4217ECFA500D75ED0 /* JiShanBuddhistFriends */ = {
 			isa = PBXGroup;
 			children = (
+				87EBEA50218075A4009A7417 /* Resources */,
 				87A162D8217EE99F00D75ED0 /* Classes */,
 				87A162AE217ECFA600D75ED0 /* Assets.xcassets */,
-				87A162B0217ECFA600D75ED0 /* LaunchScreen.storyboard */,
 				87A162B3217ECFA600D75ED0 /* Info.plist */,
 			);
 			path = JiShanBuddhistFriends;
@@ -70,12 +94,32 @@
 			isa = PBXGroup;
 			children = (
 				87A162A5217ECFA500D75ED0 /* AppDelegate.swift */,
-				87A162A7217ECFA500D75ED0 /* FirstViewController.swift */,
-				87A162A9217ECFA500D75ED0 /* SecondViewController.swift */,
+				87A162A7217ECFA500D75ED0 /* BFBookViewController.swift */,
+				87EBEA432180133F009A7417 /* BFBookInfoViewController.swift */,
+				87A162A9217ECFA500D75ED0 /* BFMainViewController.swift */,
 				87A162D5217EE2CD00D75ED0 /* BFTabBarController.swift */,
 				87A162D9217EE9F300D75ED0 /* BFDefine.swift */,
+				87EBEA592181B7FD009A7417 /* BFFastRemind.swift */,
+				87EBEA5B2181B88C009A7417 /* BFCalendar.swift */,
+				87EBEA5D2182AD3F009A7417 /* BFChineseCalendar.swift */,
+				87EBEA5F2182FCF6009A7417 /* BFNotification.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		87EBEA50218075A4009A7417 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				877CCF77217F0DE500A889AA /* Book.plist */,
+				87EBEA3F21800E37009A7417 /* 般若波罗蜜多心经.rtf */,
+				87EBEA4121800F78009A7417 /* 大悲咒.rtf */,
+				87EBEA4E21807066009A7417 /* 往生咒.rtf */,
+				87EBEA51218076E4009A7417 /* 七佛灭罪真言.rtf */,
+				87EBEA5521807B18009A7417 /* 妙法莲华经观世音菩萨普门品.rtf */,
+				87EBEA5721807CF6009A7417 /* 金刚般若波罗蜜经.rtf */,
+				87EBEA4C21804732009A7417 /* MainImage.jpeg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +180,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A162B2217ECFA600D75ED0 /* LaunchScreen.storyboard in Resources */,
+				87EBEA52218076E4009A7417 /* 七佛灭罪真言.rtf in Resources */,
+				87EBEA4F21807066009A7417 /* 往生咒.rtf in Resources */,
+				87EBEA4021800E37009A7417 /* 般若波罗蜜多心经.rtf in Resources */,
+				87EBEA5621807B18009A7417 /* 妙法莲华经观世音菩萨普门品.rtf in Resources */,
+				87EBEA4221800F78009A7417 /* 大悲咒.rtf in Resources */,
+				87EBEA4D21804732009A7417 /* MainImage.jpeg in Resources */,
+				877CCF79217F19AA00A889AA /* Book.plist in Resources */,
 				87A162AF217ECFA600D75ED0 /* Assets.xcassets in Resources */,
+				87EBEA5821807CF6009A7417 /* 金刚般若波罗蜜经.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,26 +199,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87EBEA602182FCF6009A7417 /* BFNotification.swift in Sources */,
+				87EBEA5E2182AD3F009A7417 /* BFChineseCalendar.swift in Sources */,
 				87A162DA217EE9F300D75ED0 /* BFDefine.swift in Sources */,
-				87A162AA217ECFA500D75ED0 /* SecondViewController.swift in Sources */,
+				87A162AA217ECFA500D75ED0 /* BFMainViewController.swift in Sources */,
 				87A162A6217ECFA500D75ED0 /* AppDelegate.swift in Sources */,
-				87A162A8217ECFA500D75ED0 /* FirstViewController.swift in Sources */,
+				87EBEA5A2181B7FD009A7417 /* BFFastRemind.swift in Sources */,
+				87A162A8217ECFA500D75ED0 /* BFBookViewController.swift in Sources */,
+				87EBEA5C2181B88C009A7417 /* BFCalendar.swift in Sources */,
+				87EBEA442180133F009A7417 /* BFBookInfoViewController.swift in Sources */,
 				87A162D6217EE2CD00D75ED0 /* BFTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		87A162B0217ECFA600D75ED0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				87A162B1217ECFA600D75ED0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		87A162CA217ECFA600D75ED0 /* Debug */ = {
@@ -221,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -276,7 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -290,10 +335,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MAKZS6CJ3;
 				INFOPLIST_FILE = JiShanBuddhistFriends/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,10 +355,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MAKZS6CJ3;
 				INFOPLIST_FILE = JiShanBuddhistFriends/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

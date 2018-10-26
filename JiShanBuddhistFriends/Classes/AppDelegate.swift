@@ -21,6 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
 
+        //开启推送通知
+        let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound],
+                                                  categories: nil)
+        application.registerUserNotificationSettings(settings)
+        
         return true
     }
 

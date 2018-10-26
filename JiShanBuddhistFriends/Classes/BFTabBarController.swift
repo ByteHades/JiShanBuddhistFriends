@@ -15,7 +15,7 @@ class BFTabBarViewController: UITabBarController {
     let NameArr = ["首页","藏经阁","发现","我的"]
     let PicArr = ["main","grid","cart","me"]
     let PicSelectArr = ["main_blue","grid_blue","cart_blue","me_blue"]
-    let VCArr = [FirstViewController(),SecondViewController()]
+    let VCArr = [BFBookViewController(),BFMainViewController()]
     //初始化数组
     var NavVCArr:[NSObject] = [NSObject]()
     
@@ -30,25 +30,24 @@ class BFTabBarViewController: UITabBarController {
     //创建tabBar
     func CreatTabBar()  {
         
-        _backView = UIView(frame:CGRect(x:0,y:0,width:DefineScreenWidth,height:49))
-        
-        
-        let  MainVC  = FirstViewController()
+        _backView = UIView(frame:CGRect(x:0,y:0,width:Define_ScreenWidth,height:49))
+
+        let  MainVC  = BFMainViewController()
         MainVC.title = "首页"
         let MainNav = UINavigationController(rootViewController:MainVC)
-        MainNav.tabBarItem.title = "首页"
-        MainNav.tabBarItem.image = UIImage(named:"first")
-        MainNav.tabBarItem.selectedImage = UIImage(named:"first")
+        MainVC.tabBarItem.title = "首页"
+        MainVC.tabBarItem.image = UIImage(named:"first")
+        MainVC.tabBarItem.selectedImage = UIImage(named:"first")
         
-        let  ClassVC  = SecondViewController()
-        ClassVC.title = "藏经阁"
-        let ClassNav = UINavigationController(rootViewController:ClassVC)
-        ClassNav.tabBarItem.title = "藏经阁"
-        ClassNav.tabBarItem.image = UIImage(named:"second")
-        ClassNav.tabBarItem.selectedImage = UIImage(named:"second")
+        let BookVC  = BFBookViewController()
+        BookVC.title = "藏经阁"
+        let BookNav = UINavigationController(rootViewController:BookVC)
+        BookVC.tabBarItem.title = "藏经阁"
+        BookVC.tabBarItem.image = UIImage(named:"second")
+        BookVC.tabBarItem.selectedImage = UIImage(named:"second")
 
         // 添加工具栏
-        items = [MainNav,ClassNav]
+        items = [MainNav, BookNav]
         self.viewControllers = items as? [UIViewController]
         for  i in 0 ..< items.count {
             /*

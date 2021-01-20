@@ -43,6 +43,8 @@ class BFBookViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if bookInfo != nil{
             let BookInfoVC = BFBookInfoViewController()
             BookInfoVC.SetData(_bookInfoDic: bookInfo!)
+            //打开经书文字界面后隐藏底部tableBar
+            BookInfoVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(BookInfoVC, animated: true)
         }
     }

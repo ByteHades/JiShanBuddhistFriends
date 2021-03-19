@@ -11,17 +11,6 @@ import UIKit
 
 class BFMineViewController : UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    enum EMineItem {
-        enum switchBtn {
-            case DizangFastRemind
-            func value() -> String {
-                switch self {
-                case .DizangFastRemind: return "地藏斋，吃斋提醒"
-                }
-            }
-        }
-    }
-    
     var mArrItem : NSArray?
     
     override func viewDidLoad() {
@@ -33,7 +22,7 @@ class BFMineViewController : UIViewController,UITableViewDataSource,UITableViewD
         let itemView = UIView(frame: CGRect(x: 0, y: Define_NavigationBarHeight + 50, width: Define_ScreenWidth, height: 40))
         itemView.backgroundColor = UIColor.white
         let labelDizang = UILabel(frame: CGRect(x: 20, y: (itemView.frame.height - 24)/2, width: 200, height: 24))
-        labelDizang.text = EMineItem.switchBtn.DizangFastRemind.value()
+        labelDizang.text = EMineSwitchItem.switchBtn.DizangFastRemind.value()
         labelDizang.font = UIFont.systemFont(ofSize: 18)
         itemView.addSubview(labelDizang)
         
@@ -49,7 +38,7 @@ class BFMineViewController : UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func makeItem(){
-        mArrItem?.adding(EMineItem.switchBtn.DizangFastRemind)
+        mArrItem?.adding(EMineSwitchItem.switchBtn.DizangFastRemind)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,7 +56,7 @@ class BFMineViewController : UIViewController,UITableViewDataSource,UITableViewD
 //        print(switchBtn.isOn)
 //    }
 //    @objc
-    @objc func switchDidChange(_ sender: UISwitch){
+    @objc func switchDidChange(sender: UISwitch){
         //打印当前值
         if (sender.isOn){
             BFFastRemind.Instance.openDizangFastRemind()

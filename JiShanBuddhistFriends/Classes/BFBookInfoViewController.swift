@@ -51,7 +51,7 @@ class BFBookInfoViewController: UIViewController, UITextViewDelegate {
     
     @objc func ReadFinish() {
 //        textView.contentOffset = CGPoint(x: 0, y: -100)
-        textView.setContentOffset(CGPoint(x: 0, y: -mBtnReadFinish.frame.height), animated: true)
+        textView.setContentOffset(CGPoint(x: 0, y: -mBtnReadFinish.frame.height + 10), animated: true)
     }
     
     func ShowBook() {

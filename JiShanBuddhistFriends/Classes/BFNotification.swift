@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-enum NotificationKindKey : String{
-    case DizangFastKey = "Dizang"
-}
-
 class BFNotification {
     
     static let Instance = BFNotification()
@@ -22,49 +18,41 @@ class BFNotification {
         let date = Date()
         let calendar = Calendar.current
         
-        //清理当前的通知
-        BFNotification.Instance.clearDizangFastNotification()
-        
-//        var arrNoti : [UILocalNotification] = []
-        
+        //清理地藏斋类型的通知
+        cancelNotificationForKindKey(notificationKindKey: NotificationKindKey.DizangFastKey)
+                
         //根据当前日期向后检查30天的地藏斋日加入推送通知
         for i in 1...30 {
             let laterDate = calendar.date(byAdding: .day, value: i, to: date)
             if BFFastRemind.checkDizangDay(date: laterDate!){                
                 let strDate = BFChineseCalendar.getDay(date: laterDate!, dateFormat: "MMMdd")
                 
-                //创建UILocalNotification来进行本地消息通知
-                let localNotification = UILocalNotification()
-                
-                //将提醒时间设置为早上8点半
-                var comDate = calendar.dateComponents([.year, .month, .day], from: laterDate!)
-                comDate.hour = 8
-                comDate.minute = 30
-                comDate.second = 0
-                comDate.timeZone = TimeZone.init(secondsFromGMT: 60 * 60 * 8)
-                
-                //推送时间
-                localNotification.fireDate = calendar.date(from: comDate)
-                //时区
-                localNotification.timeZone = NSTimeZone.default
-                //推送内容
-                localNotification.alertBody = "今天是农历" + strDate + " 地藏斋吃斋日"
-                //声音
-                localNotification.soundName = UILocalNotificationDefaultSoundName
-                //额外信息
-                //待机界面的滑动动作提示
-                localNotification.alertAction = "打开应用"
-                // 应用程序图标右上角显示的消息数
-                localNotification.applicationIconBadgeNumber = 1
-                
+                //设置请求标识符
                 let nID : String = NotificationKindKey.DizangFastKey.rawValue + strDate
+                //设置推送内容
+                let content = UNMutableNotificationContent()
+                content.title = "吃斋提醒"
+                content.body = "今天是农历" + strDate + " 地藏斋吃斋日"
+                content.userInfo = ["NotificationID": nID]
+                content.sound = UNNotificationSound.default
+                content.badge = 1
                 
-                localNotification.userInfo = ["NotificationID": nID]
-                
+                // 定义触发的时间组合
+                //将提醒时间设置为早上8点半
+                var matchingDate = calendar.dateComponents([.year, .month, .day], from: laterDate!)
+                matchingDate.hour = 8
+                matchingDate.minute = 30
+                matchingDate.second = 0
+                matchingDate.timeZone = TimeZone.init(secondsFromGMT: 60 * 60 * 8)
+                //设置通知触发器
+                let trigger =  UNCalendarNotificationTrigger.init(dateMatching: matchingDate, repeats: true)
+                 
+                //设置一个通知请求
+                let request = UNNotificationRequest(identifier: nID,
+                                                    content: content, trigger: trigger)
+                 
                 // fix 这里有性能问题 不应该一个一个的发送通知 应该变成数组一起发送通知
-                scheduleNotification( notificationID: nID, notification: localNotification )
-                
-//                arrNoti.append(localNotification)
+                scheduleNotification( notificationID: nID, notification: request )
             }
         }
         
@@ -77,10 +65,15 @@ class BFNotification {
     }
     
     //发送通知消息
-    func scheduleNotification(notificationID:String , notification:UILocalNotification){
-        //如果已存在该通知消息，则先取消
-        cancelNotification(notificationID: notificationID)
-        UIApplication.shared.scheduleLocalNotification(notification)
+    func scheduleNotification(notificationID:String , notification:UNNotificationRequest){
+        //将通知请求添加到发送中心
+        UNUserNotificationCenter.current().add(notification) { error in
+            if error == nil {
+                print("Time Interval Notification scheduled: \(notificationID)")
+            } else {
+                print("通知添加成功")
+            }
+        }
     }
     
     //取消某一个通知消息
@@ -89,20 +82,24 @@ class BFNotification {
         let existingNotification = self.notificationForThisItem(notificationID: notificationID)
         if existingNotification != nil {
             //如果existingNotification不为nil，就取消消息推送
-            UIApplication.shared.cancelLocalNotification(existingNotification!)
+            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [notificationID])
         }
     }
     
     //清除某一类通知
     func cancelNotificationForKindKey(notificationKindKey:NotificationKindKey){
-        let allNotifications = UIApplication.shared.scheduledLocalNotifications
-        for notification in allNotifications! {
-            let info = notification.userInfo as! [String:String]
-            let id = info["NotificationID"]
-            if id != nil && (id!.contains(notificationKindKey.rawValue)) {
-                UIApplication.shared.cancelLocalNotification(notification)
+        UNUserNotificationCenter.current().getDeliveredNotifications(completionHandler: { (allNotifications) in
+            var arrID : [String] = []
+            for notification in allNotifications {
+                let info = notification.request.content.userInfo as! [String:String]
+                let id = info["NotificationID"]
+                if id != nil && (id!.contains(notificationKindKey.rawValue)) {
+                    arrID.append(id ?? "")
+                }
             }
-        }
+            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: arrID)
+        })
+        
     }
     
     //通过遍历所有消息推送，通过itemid的对比，返回UIlocalNotification

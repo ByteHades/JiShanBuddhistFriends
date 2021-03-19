@@ -14,6 +14,8 @@
 		87A162AF217ECFA600D75ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87A162AE217ECFA600D75ED0 /* Assets.xcassets */; };
 		87A162D6217EE2CD00D75ED0 /* BFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162D5217EE2CD00D75ED0 /* BFTabBarController.swift */; };
 		87A162DA217EE9F300D75ED0 /* BFDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A162D9217EE9F300D75ED0 /* BFDefine.swift */; };
+		87CD84F425D134EE0076ACAF /* BFMessager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CD84F325D134EE0076ACAF /* BFMessager.swift */; };
+		87CD84F825D136600076ACAF /* BFEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CD84F725D136600076ACAF /* BFEnum.swift */; };
 		87EBEA4021800E37009A7417 /* 般若波罗蜜多心经.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA3F21800E37009A7417 /* 般若波罗蜜多心经.rtf */; };
 		87EBEA4221800F78009A7417 /* 大悲咒.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 87EBEA4121800F78009A7417 /* 大悲咒.rtf */; };
 		87EBEA442180133F009A7417 /* BFBookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EBEA432180133F009A7417 /* BFBookInfoViewController.swift */; };
@@ -39,6 +41,8 @@
 		87A162B3217ECFA600D75ED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87A162D5217EE2CD00D75ED0 /* BFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFTabBarController.swift; sourceTree = "<group>"; };
 		87A162D9217EE9F300D75ED0 /* BFDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFDefine.swift; sourceTree = "<group>"; };
+		87CD84F325D134EE0076ACAF /* BFMessager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFMessager.swift; sourceTree = "<group>"; };
+		87CD84F725D136600076ACAF /* BFEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFEnum.swift; sourceTree = "<group>"; };
 		87EBEA3F21800E37009A7417 /* 般若波罗蜜多心经.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "般若波罗蜜多心经.rtf"; sourceTree = "<group>"; };
 		87EBEA4121800F78009A7417 /* 大悲咒.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "大悲咒.rtf"; sourceTree = "<group>"; };
 		87EBEA432180133F009A7417 /* BFBookInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFBookInfoViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				87EBEA5B2181B88C009A7417 /* BFCalendar.swift */,
 				87EBEA5D2182AD3F009A7417 /* BFChineseCalendar.swift */,
 				87EBEA5F2182FCF6009A7417 /* BFNotification.swift */,
+				87CD84F325D134EE0076ACAF /* BFMessager.swift */,
+				87CD84F725D136600076ACAF /* BFEnum.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -213,12 +219,14 @@
 				87EBEA602182FCF6009A7417 /* BFNotification.swift in Sources */,
 				87EBEA5E2182AD3F009A7417 /* BFChineseCalendar.swift in Sources */,
 				87A162DA217EE9F300D75ED0 /* BFDefine.swift in Sources */,
+				87CD84F425D134EE0076ACAF /* BFMessager.swift in Sources */,
 				87A162AA217ECFA500D75ED0 /* BFMainViewController.swift in Sources */,
 				87A162A6217ECFA500D75ED0 /* AppDelegate.swift in Sources */,
 				87EBEA5A2181B7FD009A7417 /* BFFastRemind.swift in Sources */,
 				87A162A8217ECFA500D75ED0 /* BFBookViewController.swift in Sources */,
 				87EBEA5C2181B88C009A7417 /* BFCalendar.swift in Sources */,
 				87EBEA442180133F009A7417 /* BFBookInfoViewController.swift in Sources */,
+				87CD84F825D136600076ACAF /* BFEnum.swift in Sources */,
 				87A162D6217EE2CD00D75ED0 /* BFTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MAKZS6CJ3;
 				INFOPLIST_FILE = JiShanBuddhistFriends/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MAKZS6CJ3;
 				INFOPLIST_FILE = JiShanBuddhistFriends/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
